@@ -1,0 +1,42 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+print('I Am executing myself')
+
+
+class Operations:
+    def __init__(self, a, b):
+        self.__number_1 = a
+        self.__number_2 = b
+        print('Class initialized correctly with these two numbers: {} and {}'.format(a, b))
+
+    def __getNumber1(self):
+        return self.__number_1
+
+    def getNumber2(self):
+        return self.__number_2
+
+    def set_a_and_b(self, newvalue1, newvalue2):
+        self.__number_1 = newvalue1
+        self.__number_2 = newvalue2
+
+    def add(self):
+        return self.__number_1 + self.__number_2
+
+    def print(self):
+        print(self.add())
+    
+    def subtraction(self):
+        return np.abs(self.__number_1 - self.__number_2)
+
+
+class Plotter:
+    def __init__(self, x, y):
+        if type(x) == int or type(y) == int:
+            raise ValueError('Bad Arguments: cannot function with these things')
+        self.x = x
+        self.y = y
+        print('class plotter initialized correctly')
+
+    def plot(self):
+        plt.scatter(self.x, self.y)
